@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat Fact</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Trispace:wght@300&display=swap" rel="stylesheet"> 
+</head>
+<body onload=printfact()>
+    <div>
+        <h1>Cat Fact</h1>
+        <p id="fact">Loading...</p>
+        <button onClick=printfact()>New Fact</button>
+    </div>
+
+    <script>
+        const p = document.getElementById("fact")
+        // https://catfact.ninja/fact
+        const getFact = async() => {
+            const respond = await fetch("https://catfact.ninja/fact")
+            const data = await respond.json()
+            return data;
+        }
+
+        const printfact = () => {
+            getFact().then(d => {
+                p.innerHTML = d.fact
+            }).catch(e => {
+                console.log(e)
+            })
+        }
+
+        // https://api.thecatapi.com/v1/images/search
+
+    </script>
+</body>
+</html>

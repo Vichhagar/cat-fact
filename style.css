@@ -1,0 +1,24 @@
+* {
+    font-family: 'Trispace', sans-serif;
+}
+
+div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 2rem;
+}
+
+button {
+    height: 3rem;
+    width: 7rem;
+    border-radius: 0;
+    border: solid 1px black;
+    cursor: pointer;
+    margin-top: 1rem;
+}
